@@ -21,10 +21,13 @@ class RandomizedSet {
     public boolean remove(int val) {
         if (!map.containsKey(val))
             return false;
+
         int index = map.get(val);
         int last = list.get(list.size() - 1);
+
         list.set(index, last);
         map.put(last, index);
+        
         list.remove(list.size() - 1);
         map.remove(val);
 
