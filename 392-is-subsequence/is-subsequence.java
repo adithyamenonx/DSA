@@ -3,11 +3,21 @@ class Solution {
         int i = 0;
         int j = 0;
         while(i<s.length() && j<t.length()){
-            if(s.charAt(i)==t.charAt(j)){
-                i++;
+            char ch1=s.charAt(i);
+            char ch2=t.charAt(j);
+            if(ch1==ch2){
+                i+=1;
+                j+=1;
             }
-            j++;
+            else{
+                j+=1;
+            }
         }
-        return i == s.length();       
+        if(i==s.length()){
+            return true;
         }
+        else{
+            return false;
+        }
+    }
 }
